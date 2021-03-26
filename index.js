@@ -1,3 +1,3 @@
-import { Link, Route, Router, Redirect } from "./dist";
+import { Link, Route, Router, Redirect, Switch } from "./dist";
 
-export { Link, Route, Router, Redirect };
+export { Link, Route, Router, Redirect, Switch };

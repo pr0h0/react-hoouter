@@ -5,12 +5,14 @@ import * as TYPES from "./types";
 import { GlobalContext } from "./Context";
 
 const Link = ({ to, ...props }) => {
-  const [, dispatch] = React.useState(GlobalContext);
+  const [, dispatch] = React.useContext(GlobalContext);
   console.assert(to, "props 'to' is required");
 
   const handleClick = (e) => {
     e.preventDefault();
-    dispatch({ type: TYPES.SET_ACTIVE_ROUTE, activeRoute: props.to });
+    if (to) {
+      dispatch({ type: TYPES.SET_ACTIVE_ROUTE, activeRoute: to });
+    }
   };
 
   return (

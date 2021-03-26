@@ -3,8 +3,6 @@ import PropTypes from "prop-types";
 
 import GlobalReducer from "./reducer";
 
-window.React1 = React;
-
 const initialState = {
   activeRoute: window.location.pathname,
 };

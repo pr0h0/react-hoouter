@@ -1,17 +1,26 @@
 {
   "name": "react-hoouter",
-  "version": "0.2.0",
+  "description": "React router made with react hooks",
+  "version": "0.5.0",
+  "author": "pr0h0 <abdulah.proho@edu.fit.ba> (https://pr0h0.me)",
+  "keywords": [
+    "react",
+    "router",
+    "hooks",
+    "hoouter"
+  ],
   "private": false,
+  "license": "MIT",
+  "funding": {
+    "type": "paypal",
+    "url": "https://paypal.me/pr0h0"
+  },
   "repository": {
     "type": "github",
     "url": "https://github.com/pr0h0/react-hoouter"
   },
-  "author": "pr0h0 <abdulah.proho@edu.fit.ba>",
   "dependencies": {
-    "prop-types": "^15.7.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "web-vitals": "^1.1.1"
+    "prop-types": "^15.7.2"
   },
   "main": "index.js",
   "scripts": {
@@ -42,7 +51,8 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.13.10",
-    "@babel/preset-react": "^7.12.13"
+    "@babel/preset-react": "^7.12.13",
+    "react": "^17.0.2"
   },
   "babel": {
     "presets": [

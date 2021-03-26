@@ -2,25 +2,21 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { GlobalContext } from "./Context";
+import { shouldRender } from "./utils";
 
 const Route = ({ path, component: Component, exact }) => {
   const [state] = React.useContext(GlobalContext);
 
-  if (!path) {
+  if (shouldRender({ path, exact, activeRoute: state.activeRoute })) {
     return <Component location={state} />;
-  } else if (exact && state.activeRoute === path) {
-    return <Component location={state} />;
-  } else if (!exact && state.activeRoute.startsWith(path)) {
-    return <Component location={state} />;
-  } else {
-    return null;
   }
+  return false;
 };
 
 export default Route;
 
 Route.propTypes = {
-  path: PropTypes.string.isRequired,
+  path: PropTypes.string,
   component: PropTypes.func,
   exact: PropTypes.bool,
 };

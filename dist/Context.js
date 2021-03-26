@@ -1,22 +1,23 @@
 import React from "react";
 import PropTypes from "prop-types";
 import GlobalReducer from "./reducer";
-window.React1 = React;
 const initialState = {
-  activeRoute: window.location.pathname
+  activeRoute: window.location.pathname,
 };
 
-function Store({
-  children
-}) {
+function Store({ children }) {
   const [state, dispatch] = React.useReducer(GlobalReducer, initialState);
-  return /*#__PURE__*/React.createElement(GlobalContext.Provider, {
-    value: [state, dispatch]
-  }, children);
+  return /*#__PURE__*/ React.createElement(
+    GlobalContext.Provider,
+    {
+      value: [state, dispatch],
+    },
+    children
+  );
 }
 
-export const GlobalContext = /*#__PURE__*/React.createContext(initialState);
+export const GlobalContext = /*#__PURE__*/ React.createContext(initialState);
 export default Store;
 Store.propTypes = {
-  children: PropTypes.array
+  children: PropTypes.array,
 };
